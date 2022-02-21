@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          x:TypeArguments="viewModels:ReviewPhotoViewModel"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.ReviewPhotoPage"
+                          HasNativeNavBar="False"
+                          Title="ReviewPhoto">
+
+    <ContentPage.Content>
+
+        <RelativeLayout BackgroundColor="{StaticResource tcolor_b11}">
+
+            <components:CustomNavigationBar RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=80}"
+                                            BackgroundViewColor="{StaticResource tcolor_b11}"
+                                            ImgSource="btn_back_black.png"
+                                            ClickCommand="{mvx:MvxBind BackCommand}"/>
+
+            <Grid  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-80}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=80}"
+                   Padding="20,0,20,0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0"
+                       Style="{StaticResource agreementStyle_i1}"
+                       mvx:Bi.nd="Text [ReviewYourPhoto]"/>
+
+                <!--<FlexLayout Grid.Row="1"
+                            JustifyContent="SpaceEvenly"
+                            Direction="Column">
+
+                    <Label FontFamily="{StaticResource SPProT_R}" 
+                           FontSize="{StaticResource fsize_i16}"
+                           TextColor="{StaticResource tcolor_b3}"
+                           mvx:Bi.nd="Text [EnsureAllWorldsClear]; IsVisible IsTextVisible, Mode=TwoWay"/>
+
+                    <Frame CornerRadius="10"
+                           BackgroundColor="{StaticResource tcolor_b14}"
+                           HasShadow="False"
+                           Padding="0">
+
+                        <Image x:Name="userPhoto"
+                               Aspect="AspectFit"/>
+
+                    </Frame>
+
+                </FlexLayout>-->
+
+                <Grid Grid.Row="1"
+                      mvx:Bi.nd="IsVisible IsTextVisible, Mode=TwoWay">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Label Grid.Row="0" 
+                           Style="{StaticResource reviewStyle_i1}"
+                           mvx:Bi.nd="Text [EnsureAllWorldsClear]"/>
+
+                    <Frame Grid.Row="1" 
+                           Style="{StaticResource frameStyle_i2}">
+
+                        <Image x:Name="userId"
+                               Aspect="AspectFit"/>
+
+                    </Frame>
+
+                </Grid>
+
+                <Frame Grid.Row="1"
+                       Style="{StaticResource frameStyle_i2}"
+                       mvx:Bi.nd="IsVisible IsUserFaceVisible, Mode=TwoWay">
+
+                    <Image x:Name="userPhoto"
+                           Aspect="AspectFit"/>
+
+                </Frame> 
+
+                <StackLayout Grid.Row="2" 
+                             Spacing="5"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Orientation="Horizontal">
+
+                    <Image Source="img_camera.png"
+                           BackgroundColor="Transparent"/>
+
+                    <Button Style="{x:DynamicResource bstyle_i2}"
+                            Padding="5,0,5,0"
+                            mvx:Bi.nd="Text [Retake]"
+                            Command="{mvx:MvxBind RetakePhotoCommand}"/>
+
+                </StackLayout>
+
+                <Button Grid.Row="3"
+                        Style="{x:DynamicResource bstyle_i1}"
+                        Command="{mvx:MvxBind NextCommand}"
+                        mvx:Bi.nd="Text [Next]; IsEnabled IsValidForm, Mode=TwoWay"/>
+
+
+            </Grid>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+    
+</baseView:BaseContentPage>

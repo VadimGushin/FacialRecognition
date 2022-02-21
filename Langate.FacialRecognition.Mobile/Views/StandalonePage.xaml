@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          x:TypeArguments="viewModels:StandaloneViewModel"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.StandalonePage"
+                          HasNativeNavBar="False"
+                          Title="Standalone">
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <Image Source="img_bkg.png"
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional" />
+
+            <Image AbsoluteLayout.LayoutBounds=".5,.15,.48,.12"
+                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional" 
+                   Aspect="AspectFit"
+                   Source="img_standalone_logo.png"
+                   BackgroundColor="Transparent"/>
+
+            <Label AbsoluteLayout.LayoutBounds="0,.5,1,100"
+                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional"
+                   Style="{x:DynamicResource standaloneStyle_i1}"
+                   mvx:Bi.nd="Text MainText, Mode=TwoWay"/>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

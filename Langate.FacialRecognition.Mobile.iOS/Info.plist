@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>8.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>FacialRecognition.Mobile</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.vctrials.virtualstudy.mobile</string>
+	<key>CFBundleVersion</key>
+	<string>1.21</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>FacialRecognition.Mobile</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/SFCompactText-Medium.ttf</string>
+		<string>Fonts/SFProDisplay-Bold.ttf</string>
+		<string>Fonts/SFProDisplay-Medium.ttf</string>
+		<string>Fonts/SFProDisplay-Regular.ttf</string>
+		<string>Fonts/SFProText-Medium.ttf</string>
+		<string>Fonts/SFProText-Regular.ttf</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleBlackOpaque</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSCameraUsageDescription</key>
+	<string>
+    Requires access to the camera.
+  </string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>
+    Requires access to the library.
+  </string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>
+    Requires access to the calendar.
+  </string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>vctvirtual-d7012</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.vctrials.virtualstudy.mobile</string>
+			</array>
+			<key>CFBundleURLIconFile</key>
+			<string>img_logo</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+	</array>
+</dict>
+</plist>

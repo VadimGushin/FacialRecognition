@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          x:TypeArguments="viewModels:UploadingImagesViewModel"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.UploadingImagesPage"
+                          HasNativeNavBar="False"
+                          Title="UploadingImages">
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <Image AbsoluteLayout.LayoutBounds=".5,.28,.38,.25"
+                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional" 
+                   Aspect="AspectFit"
+                   Source="img_files.png"
+                   BackgroundColor="Transparent"/>
+
+            <Grid AbsoluteLayout.LayoutBounds="0,.55,1,70"
+                  AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional" 
+                  Padding="20,0,20,0" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Style="{StaticResource agreementStyle_i2}"
+                       mvx:Bi.nd="Text [Uploading]"/>
+
+                <ProgressBar Grid.Row="1"
+                             Grid.Column="0"
+                             Style="{StaticResource progressBar_i1}"
+                             mvx:Bi.nd="Progress ProgressValue, Mode=TwoWay"/>
+
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Style="{StaticResource uploadingStyle_i1}"
+                       mvx:Bi.nd="Text ProgressText, Mode=TwoWay"/>
+
+            </Grid>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

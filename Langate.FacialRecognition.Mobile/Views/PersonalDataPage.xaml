@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          x:TypeArguments="viewModels:PersonalDataViewModel"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.PersonalDataPage"
+                          HasNativeNavBar="False"
+                          Title="PersonalData">
+
+    <ContentPage.Content>
+
+        <RelativeLayout BackgroundColor="{StaticResource tcolor_b11}">
+
+            <components:CustomNavigationBar RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=80}"
+                                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                            BackgroundViewColor="{StaticResource tcolor_b11}"
+                                            ImgSource="btn_back_black.png"
+                                            ClickCommand="{mvx:MvxBind BackCommand}"/>
+
+            <Grid Padding="20,0,20,0"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=80}"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-80}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <components:CustomScrollView Grid.Row="0"
+                                             IsOverViewVisible="False">
+
+                    <StackLayout Orientation="Vertical"
+                                 Spacing="{StaticResource fsize_i25}">
+
+                        <Label Style="{StaticResource agreementStyle_i1}"
+                               mvx:Bi.nd="Text [EnterPersonalData]"/>
+
+                        <Label Style="{StaticResource agreementStyle_i2}"
+                               mvx:Bi.nd="Text [ExectlyAsIt]"/>
+
+                        <Label Style="{StaticResource agreementStyle_i2}"
+                               Margin="0,0,0,-15"
+                               mvx:Bi.nd="Text [FirstThreeLettersFirstName]"/>
+
+                        <components:CustomDataEntry Placeholder="xxx"
+                                                    MaxLength="3"
+                                                    EntryValueType="name"
+                                                    Style="{StaticResource entryStyle_i1}"
+                                                    HeightRequest="{StaticResource fsize_i45}"
+                                                    mvx:Bi.nd="Text FirstName, Mode=TwoWay; ValidTextLenght FirstNameValidLenght, Mode=TwoWay"/>
+
+                        <Label Style="{StaticResource agreementStyle_i2}"
+                               Margin="0,5,0,-15"
+                               mvx:Bi.nd="Text [MiddleInitial]"/>
+
+                        <components:CustomDataEntry Placeholder="x"
+                                                    MaxLength="1"
+                                                    EntryValueType="middle_name"
+                                                    Style="{StaticResource entryStyle_i1}"
+                                                    HeightRequest="{StaticResource fsize_i45}"
+                                                    mvx:Bi.nd="Text MiddleInitial, Mode=TwoWay; ValidTextLenght MiddleNameValidLenght, Mode=TwoWay"/>
+
+                        <Label Style="{StaticResource agreementStyle_i2}"
+                               FontSize="{StaticResource fsize_i14}"
+                               Margin="0,-15,0,0"
+                               mvx:Bi.nd="Text [IfNoMiddleInitial]"/>
+
+                        <Label Style="{StaticResource agreementStyle_i2}"
+                               Margin="0,0,0,-15"
+                               mvx:Bi.nd="Text [FirstThreeLettersLastName]"/>
+
+                        <components:CustomDataEntry Placeholder="xxx"
+                                                    ValidTextLenght="3"
+                                                    MaxLength="3"
+                                                    EntryValueType="name"                                   
+                                                    Style="{StaticResource entryStyle_i1}"
+                                                    HeightRequest="{StaticResource fsize_i45}"
+                                                    mvx:Bi.nd="Text LastName, Mode=TwoWay; ValidTextLenght LastNameValidLenght, Mode=TwoWay"/>
+
+                        <Label Style="{StaticResource agreementStyle_i2}"
+                               FontSize="{StaticResource fsize_i14}"
+                               Margin="0,-15,0,0"
+                               mvx:Bi.nd="Text [IfYouHaveMultipleNames]"/>
+
+                        <Label Style="{StaticResource agreementStyle_i2}"
+                               Margin="0,0,0,-15"
+                               mvx:Bi.nd="Text [DateOfBirth]"/>
+
+                        <components:DatePickerEntry Grid.Row="16"
+                                                    mvx:Bi.nd="SelectedDOB SelectedDate, Mode=TwoWay"/>
+
+                        <Label Style="{StaticResource agreementStyle_i2}"
+                               Margin="0,5,0,-15"
+                               mvx:Bi.nd="Text [Gender]"/>
+
+                        <components:CustomDropDownView IsRequired="False"
+                                                       CornerRadius="5"
+                                                       Color="{StaticResource tcolor_b13}"
+                                                       ArrowImage="img_arrow_down"
+                                                       BorderColor="{StaticResource tcolor_b5}"
+                                                       TextHeight="45"
+                                                       TextColor="{StaticResource tcolor_b13}"
+                                                       FontFamily="{StaticResource SPProT_R}"
+                                                       FontSize="{StaticResource fsize_i16}"
+                                                       mvx:Bi.nd="ItemsSource Genders, Mode=TwoWay;
+                                                       SelectedItem SelectedGender, Mode=TwoWay"/>
+
+                        <Grid Margin="0,5,0,0">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="50*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="0"
+                                   Style="{StaticResource agreementStyle_i2}"
+                                   mvx:Bi.nd="Text [TypesOfId]"/>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="1"
+                                   Style="{StaticResource agreementStyle_i2}"
+                                   mvx:Bi.nd="Text [ValidId]"/>
+
+                            <components:CustomDropDownView Grid.Row="1"
+                                                           Grid.Column="0"
+                                                           IsRequired="False"
+                                                           CornerRadius="5"
+                                                           Color="{StaticResource tcolor_b13}"
+                                                           ArrowImage="img_arrow_down"
+                                                           BorderColor="{StaticResource tcolor_b5}"
+                                                           TextHeight="45"
+                                                           TextColor="{StaticResource tcolor_b13}"
+                                                           FontFamily="{StaticResource SPProT_R}"
+                                                           FontSize="{StaticResource fsize_i16}"
+                                                           mvx:Bi.nd="ItemsSource IdTypes, Mode=TwoWay; 
+                                                           SelectedItem SelectedIdType, Mode=TwoWay"/>
+
+                            <components:CustomDataEntry Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        x:Name="validId"
+                                                        Placeholder="xxxxx"
+                                                        ValidTextLenght="5"
+                                                        MaxLength="5"
+                                                        EntryValueType="id"
+                                                        Style="{StaticResource entryStyle_i1}"
+                                                        mvx:Bi.nd="Text ValidId, Mode=TwoWay; ValidTextLenght ValidIdValidLenght, Mode=TwoWay"/>
+
+                            <Label Grid.Row="2"
+                                   Grid.Column="1"
+                                   Style="{StaticResource agreementStyle_i2}"
+                                   FontSize="{StaticResource fsize_i14}"
+                                   mvx:Bi.nd="Text [LastDigits]"/>
+
+                        </Grid>
+
+                        <BoxView BackgroundColor="Transparent"
+                                 HeightRequest="{StaticResource fsize_i20}"/>
+
+                    </StackLayout>
+
+                </components:CustomScrollView>
+
+            <Button Grid.Row="1"
+                    Style="{x:DynamicResource bstyle_i1}"
+                    Command="{mvx:MvxBind NextCommand}"
+                    mvx:Bi.nd="Text [Next]; IsEnabled IsValidForm, Mode=TwoWay"/>
+
+            </Grid>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

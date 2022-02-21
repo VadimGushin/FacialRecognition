@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          x:TypeArguments="viewModels:UploadingResultViewModel"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.UploadingResultPage"
+                          HasNativeNavBar="False"
+                          Title="UploadingResult">
+
+    <ContentPage.Content>
+
+        <RelativeLayout>
+
+            <components:CustomNavigationBar RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=80}"
+                                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                            BackgroundViewColor="{StaticResource tcolor_b11}"
+                                            IsBackButtonVisible="False"
+                                            ImgSource="btn_back_black.png"/>
+
+            <Image RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.22}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.22}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   BackgroundColor="Transparent"
+                   mvx:Bi.nd="Source MainImage, Mode=TwoWay"/>
+
+            <components:CustomScrollView RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.5}"
+                                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.5, Constant=-100}"
+                                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                <StackLayout Orientation="Vertical"
+                             Spacing="{StaticResource fsize_i25}"
+                             Padding="20,0,20,0">
+
+                    <Label Style="{StaticResource uploadingResultStyle_i1}"
+                           mvx:Bi.nd="Text MainText, Mode=TwoWay"/>
+
+                    <Label Style="{StaticResource reviewStyle_i1}"
+                           LineHeight="1.3"
+                           HorizontalTextAlignment="Center"
+                           mvx:Bi.nd="Text Description, Mode=TwoWay"/>
+
+                </StackLayout>
+
+            </components:CustomScrollView>
+
+            <RelativeLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-80}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=50}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                             Margin="30,0,30,0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             mvx:Bi.nd="IsVisible IsSuccededUploading, Mode=TwoWay">
+
+                    <Grid VerticalOptions="Center"
+                          mvx:Bi.nd="IsVisible IsUrlPresent, Mode=TwoWay">
+
+                        <Label Grid.Row="0"
+                               Style="{x:DynamicResource uploadingResultStyle_i2}"
+                               VerticalOptions="Center"
+                               mvx:Bi.nd="Text Url, Mode=TwoWay"/>
+
+                        <Button Grid.Row="0"
+                                Style="{StaticResource bstyle_i2}"
+                                Command="{mvx:MvxBind ShowUrlCommand}"/>
+
+                    </Grid>
+
+                    <Image BackgroundColor="Transparent"
+                           Aspect="AspectFit"
+                           Source="img_blue_arrow.png"
+                           VerticalOptions="Center"
+                           mvx:Bi.nd="IsVisible IsUrlPresent, Mode=TwoWay"/>
+
+                </StackLayout>
+
+                <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                             Margin="20,0,20,0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             mvx:Bi.nd="IsVisible IsBottomTextVisible, Mode=TwoWay">
+
+                    <Image BackgroundColor="Transparent"
+                           Aspect="AspectFit"
+                           mvx:Bi.nd="Source BottomImage, Mode=TwoWay"/>
+
+                    <Label Style="{StaticResource reviewStyle_i2}"
+                           mvx:Bi.nd="Text BottomText, Mode=TwoWay; TextColor BottomTextColor, Mode=TwoWay"/>
+
+                </StackLayout>
+
+                <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                             Spacing="5"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Orientation="Horizontal"
+                             mvx:Bi.nd="IsVisible IsWarningUploading, Mode=TwoWay">
+
+                    <Image Source="img_camera.png"
+                           BackgroundColor="Transparent"/>
+
+                    <Button Style="{x:DynamicResource bstyle_i2}"
+                            Padding="5,0,5,0"
+                            mvx:Bi.nd="Text [Retake]"
+                            Command="{mvx:MvxBind RetakeCommand}"/>
+
+                </StackLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

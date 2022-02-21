@@ -1,0 +1,33 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Config/ApplicationConfig.cs">
+    <Files>
+      <File FileName="Config/ApplicationConfig.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Langate.FacialRecognition.Mobile" expanded="True">
+            <Node name="Langate.FacialRecognition.Mobile" expanded="True">
+              <Node name="Config" expanded="True" />
+              <Node name="Converters" expanded="True" />
+              <Node name="Extensions" expanded="True" />
+              <Node name="Heplers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Presenters" expanded="True" />
+              <Node name="Resources" expanded="True" selected="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

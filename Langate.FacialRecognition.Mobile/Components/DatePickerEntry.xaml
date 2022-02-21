@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+             xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+             mc:Ignorable="d"
+             x:Class="Langate.FacialRecognition.Mobile.Components.DatePickerEntry">
+    
+  <ContentView.Content>
+
+        <StackLayout Orientation="Vertical">
+
+            <Grid MinimumHeightRequest="45">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <components:CustomDataEntry Grid.Column="0"
+                                            x:Name="date"
+                                            Placeholder="Date"
+                                            ValidTextLenght="0"
+                                            Keyboard="Numeric"
+                                            MaxLength="2"
+                                            EntryValueType="number"
+                                            Style="{StaticResource entryStyle_i1}"/>
+
+                <components:CustomDropDownView Grid.Column="1"
+                                               x:Name="month"
+                                               IsRequired="False"
+                                               CornerRadius="5"
+                                               Color="{StaticResource tcolor_b13}"
+                                               ArrowImage="img_arrow_down"
+                                               BorderColor="{StaticResource tcolor_b5}"
+                                               TextHeight="45"
+                                               TextColor="{StaticResource tcolor_b13}"
+                                               FontFamily="{StaticResource SPProT_R}"
+                                               FontSize="{StaticResource fsize_i16}"/>
+
+                <components:CustomDataEntry Grid.Column="2"
+                                            x:Name="year"
+                                            Placeholder="Year"
+                                            ValidTextLenght="0"
+                                            Keyboard="Numeric"
+                                            MaxLength="4"
+                                            EntryValueType="number"
+                                            Style="{StaticResource entryStyle_i1}"/>
+
+
+            </Grid>
+
+            <Label 
+                   x:Name="error"
+                   Text="Invalid date"
+                   TextColor="Red"
+                   FontSize="10"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Start"/>
+
+        </StackLayout>
+      
+  </ContentView.Content>
+    
+</ContentView>

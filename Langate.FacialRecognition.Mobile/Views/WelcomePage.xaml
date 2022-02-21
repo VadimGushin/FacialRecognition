@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          x:TypeArguments="viewModels:WelcomeViewModel"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.WelcomePage"
+                          HasNativeNavBar="False"
+                          Title="Welcome">
+
+    <ContentPage.Content>
+
+        <RelativeLayout>
+
+            <Image Source="img_bkg.png"
+                   Aspect="AspectFill"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"/>
+
+            <Grid Padding="20,0,20,0"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <components:CustomScrollView Grid.Row="0" 
+                                             IsOverViewVisible="False">
+
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="110"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="120"/>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="90"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="1"
+                               Source="img_logo.png"/>
+
+                        <Label Grid.Row="3"
+                               Style="{StaticResource welcomStyle_i3}"
+                               mvx:Bi.nd="Text [WelcomeTo]"/>
+
+                        <Label Grid.Row="4"
+                               Style="{StaticResource welcomStyle_i3}"
+                               FontFamily="{StaticResource SPProD_B}"
+                               FontSize="{StaticResource fsize_i40}"
+                               mvx:Bi.nd="Text [StudyVerification]"/>
+
+                        <AbsoluteLayout Grid.Row="6">
+
+                            <Image  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                    AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional" 
+                                    Aspect="Fill"
+                                    Source="img_rect_corner.png"/>
+
+                            <Image  AbsoluteLayout.LayoutBounds=".1,.5,.2,1"
+                                    AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional"
+                                    Aspect="AspectFit"
+                                    Source="img_user_name.png"/>
+
+                            <Label AbsoluteLayout.LayoutBounds=".95,0,.6,.6"
+                                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional"
+                                   Style="{x:DynamicResource welcomStyle_i1}"
+                                   mvx:Bi.nd="Text [WelcomeName]"/>
+
+                            <Label AbsoluteLayout.LayoutBounds=".95,1,.6,.4"
+                                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional"
+                                   Style="{x:DynamicResource welcomStyle_i2}"
+                                   mvx:Bi.nd="Text DoctorName, Mode=TwoWay"/>
+
+                        </AbsoluteLayout>
+
+                        <AbsoluteLayout Grid.Row="7">
+
+                            <Image  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                    AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional" 
+                                    Aspect="Fill"
+                                    Source="img_rect.png"/>
+
+                            <Image  AbsoluteLayout.LayoutBounds=".1,.5,.2,1"
+                                    AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional" 
+                                    Aspect="AspectFit"
+                                    Source="img_site.png"/>
+
+                            <Label AbsoluteLayout.LayoutBounds=".95,0,.6,.6"
+                                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional"
+                                   Style="{x:DynamicResource welcomStyle_i1}"
+                                   mvx:Bi.nd="Text [WelcomeAt]"/>
+
+                            <Label AbsoluteLayout.LayoutBounds=".95,1,.6,.4"
+                                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional"
+                                   Style="{x:DynamicResource welcomStyle_i2}"
+                                   TextColor="{StaticResource tcolor_b2}"
+                                   mvx:Bi.nd="Text SiteUrl, Mode=TwoWay"/>
+
+                        </AbsoluteLayout>
+
+                        <AbsoluteLayout Grid.Row="8">
+
+                            <Image  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                    AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional" 
+                                    Aspect="Fill"
+                                    Source="img_rect.png"/>
+
+                            <Image  AbsoluteLayout.LayoutBounds=".1,.5,.2,1"
+                                    AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional" 
+                                    Aspect="AspectFit"
+                                    Source="img_number.png"/>
+
+                            <Label AbsoluteLayout.LayoutBounds=".95,0,.6,.6"
+                                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional"
+                                   Style="{x:DynamicResource welcomStyle_i1}"
+                                   mvx:Bi.nd="Text [WelcomeNumber]"/>
+
+                            <Label AbsoluteLayout.LayoutBounds=".95,1,.6,.4"
+                                   AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional"
+                                   Style="{x:DynamicResource welcomStyle_i2}"
+                                   mvx:Bi.nd="Text SubjectNumber, Mode=TwoWay"/>
+
+                        </AbsoluteLayout>
+
+                    </Grid>
+
+                </components:CustomScrollView>
+
+                <Button Grid.Row="2"
+                        Style="{x:DynamicResource bstyle_i1}"
+                        Command="{mvx:MvxBind NextCommand}"
+                        mvx:Bi.nd="Text [Next]; IsEnabled IsValidForm, Mode=TwoWay"/>
+
+            </Grid>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

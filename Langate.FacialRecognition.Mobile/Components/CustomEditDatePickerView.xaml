@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+             x:Class="Langate.FacialRecognition.Mobile.Components.CustomEditDatePickerView">
+    
+  <ContentView.Content>
+      
+        <StackLayout Orientation="Vertical"
+                     Margin="0,7,0,7"
+                     Padding="20,0,0,0">
+
+            <Label x:Name="topLable"
+                   Style="{StaticResource agreementStyle_i2}"
+                   HeightRequest="45"/>
+
+            <Grid Padding="0,0,20,0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0"
+                       x:Name="titleLabel"
+                       VerticalTextAlignment="Center"
+                       Style="{StaticResource confirmStyle_i1}"/>
+
+                <components:DatePickerEntry Grid.Column="0"
+                                            x:Name="datePicker"/>
+
+                <ImageButton Grid.Column="1"
+                             x:Name="button"
+                             Aspect="AspectFit"
+                             BackgroundColor="Transparent"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center"
+                             Source="img_edit.png"/>
+
+            </Grid>
+
+            <BoxView BackgroundColor="{StaticResource tcolor_b15}"
+                     HeightRequest="1"/>
+
+        </StackLayout>
+      
+    </ContentView.Content>
+    
+</ContentView>

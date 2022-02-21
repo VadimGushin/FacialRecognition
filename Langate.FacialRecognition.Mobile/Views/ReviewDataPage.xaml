@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          x:TypeArguments="viewModels:ReviewDataViewModel"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.ReviewDataPage"
+                          HasNativeNavBar="False"
+                          Title="ReviewData">
+
+    <ContentPage.Content>
+
+        <RelativeLayout BackgroundColor="{StaticResource tcolor_b11}">
+
+            <components:CustomNavigationBar RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=80}"
+                                            BackgroundViewColor="{StaticResource tcolor_b11}"
+                                            ImgSource="btn_back_black.png"
+                                            ClickCommand="{mvx:MvxBind BackCommand}"/>
+
+            <Grid  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-80}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=80}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <!--<RowDefinition Height="10"/>-->
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <components:CustomScrollView x:Name="scrollView"
+                                             Grid.Row="0"
+                                             IsOverViewVisible="False">
+
+                    <StackLayout Orientation="Vertical">
+
+                        <Label Style="{StaticResource agreementStyle_i1}"
+                               Margin="0,5,0,20"
+                               mvx:Bi.nd="Text [ConfirmAccuracy]"/>
+
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="25,0,25,0"
+                                     mvx:Bi.nd="IsVisible IsErrorVisible, Mode=TwoWay">
+
+                            <Image Source="img_info.png"
+                                   VerticalOptions="Start"
+                                   Aspect="AspectFit"/>
+
+                            <Label Style="{StaticResource confirmStyle_i2}"
+                                   mvx:Bi.nd="Text [DiscrepancyIsFound], Mode=TwoWay"/>
+
+                        </StackLayout>
+
+                        <components:CustomEditEntry x:Name="firstNameValue"
+                                                    EntryType="name"
+                                                    mvx:Bi.nd="TitleText [FirstName], Mode=TwoWay; 
+                                                    MainValue FirstName, Mode=TwoWay"
+                                                    ValidValueLenght="3"/>
+
+                        <components:CustomEditEntry x:Name="middleNameValue"
+                                                    EntryType="middle_name"
+                                                    mvx:Bi.nd="TitleText [MiddleName], Mode=TwoWay; 
+                                                    MainValue MiddleName, Mode=TwoWay"
+                                                    ValidValueLenght="1"/>
+
+                        <components:CustomEditEntry x:Name="lastNameValue"
+                                                    EntryType="name"
+                                                    mvx:Bi.nd="TitleText [LastName], Mode=TwoWay; 
+                                                    MainValue LastName, Mode=TwoWay"
+                                                    ValidValueLenght="3"/>
+
+                        <components:CustomEditDropDownView x:Name="genderView"
+                                                           mvx:Bi.nd="TitleText [Gender], Mode=TwoWay; 
+                                                           Items Genders, Mode=TwoWay;
+                                                           SelectedItem SelectedGender, Mode=TwoWay;
+                                                           InitValue InitGender, Mode=TwoWay"/>
+
+                        <components:CustomEditDatePickerView x:Name="datePicker"
+                                                             mvx:Bi.nd="TitleText [DateOfBirth], Mode=TwoWay; 
+                                                             DateSelected SelectedDate, Mode=TwoWay"/>
+
+                        <components:CustomEditEntry x:Name="idValue"
+                                                    mvx:Bi.nd="TitleText [Id], Mode=TwoWay; 
+                                                    MainValue IdValue, Mode=TwoWay"
+                                                    EntryType="id"
+                                                    ValidValueLenght="5"/>
+
+                        <CollectionView ItemsSource="{mvx:MvxBind Photos}"
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="100"
+                                        Margin="20"
+                                        ItemsLayout="HorizontalList">
+
+                            <CollectionView.ItemTemplate>
+
+                                <DataTemplate>
+
+                                    <RelativeLayout WidthRequest="100" 
+                                                    IsClippedToBounds="True">
+
+                                        <ImageButton RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0}"
+                                                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                                                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-4}"
+                                                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=2}"
+                                                     BackgroundColor="Transparent"
+                                                     mvx:Bi.nd="Source Photo"
+                                                     CornerRadius="5"
+                                                     Aspect="AspectFill"/>
+
+                                    </RelativeLayout>
+
+                                </DataTemplate>
+
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+                        <StackLayout Spacing="5"
+                                     Margin="0,0,0,15"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Orientation="Horizontal">
+
+                            <Image Source="img_camera.png"
+                                   BackgroundColor="Transparent"/>
+
+                            <Button Style="{x:DynamicResource bstyle_i2}"
+                                    Padding="5,0,5,0"
+                                    mvx:Bi.nd="Text [Retake]"
+                                    Command="{mvx:MvxBind RetakePhotoCommand}"/>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </components:CustomScrollView>
+
+                <Button Grid.Row="1"
+                        Style="{x:DynamicResource bstyle_i1}"
+                        Margin="20,0,20,0"
+                        Command="{mvx:MvxBind NextCommand}"
+                        mvx:Bi.nd="Text ButtonTitle; IsEnabled IsValidForm, Mode=TwoWay"/>
+
+            </Grid>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

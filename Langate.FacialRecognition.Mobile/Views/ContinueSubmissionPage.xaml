@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          x:TypeArguments="viewModels:ContinueSubmissionViewModel"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.ContinueSubmissionPage"
+                          xmlns:converters="clr-namespace:Langate.FacialRecognition.Mobile.Converters.ContinueSubmitions"
+                          HasNativeNavBar="False"
+                          Title="ContinueSubmission">
+
+    <baseView:BaseContentPage.Resources>
+        
+        <ResourceDictionary>
+            
+            <converters:ItemBorderColorConverter x:Key="ItemBorderColorConverter"/> 
+            <converters:ItemImageSourceConverter x:Key="ItemImageSourceConverter"/>
+            <converters:ItemTextColorConverter x:Key="ItemTextColorConverter"/>
+            
+        </ResourceDictionary>
+        
+    </baseView:BaseContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <RelativeLayout>
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-80}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                         Orientation="Vertical"
+                         Padding="0,20">
+
+                <Label Style="{StaticResource agreementStyle_i1}"
+                       HorizontalOptions="Start"
+                       Margin="20,30,20,0"
+                       mvx:Bi.nd="Text Title"/>
+
+                <components:CustomScrollView IsOverViewVisible="False">
+
+                    <StackLayout x:Name="items"
+                                 BindableLayout.ItemsSource="{Binding Items}"
+                                 Orientation="Vertical"
+                                 Padding="20,15"
+                                 Spacing="15">
+
+                        <BindableLayout.ItemTemplate>
+
+                            <DataTemplate>
+
+                                <Frame BorderColor="{Binding IsSelected, Converter={StaticResource ItemBorderColorConverter}}"
+                                       CornerRadius="10"
+                                       HasShadow="True"
+                                       Padding="0"
+                                       Margin="0">
+
+                                    <StackLayout Orientation="Horizontal"
+                                                 Margin="10,15">
+
+                                        <Image Margin="15,0"
+                                               VerticalOptions="Start"
+                                               Source="{Binding IsSelected, Converter={StaticResource ItemImageSourceConverter}}"/>
+
+                                        <StackLayout Orientation="Vertical"
+                                                     Margin="0,0,15,0">
+
+                                            <Label Style="{StaticResource continueSubmission_i1}"
+                                                   TextColor="{Binding IsCurrent, Converter={StaticResource ItemTextColorConverter}}"
+                                                   mvx:Bi.nd="Text Title"/>
+
+                                            <Label Style="{StaticResource continueSubmission_i2}"
+                                                   mvx:Bi.nd="Text Study"/>
+
+                                            <Label Style="{StaticResource continueSubmission_i1}"
+                                                   mvx:Bi.nd="Text Location"/>
+
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                    <Frame.GestureRecognizers>
+
+                                        <TapGestureRecognizer Tapped="OnItemTapped"
+                                                              CommandParameter="{Binding Token}"/>
+
+                                    </Frame.GestureRecognizers>
+
+                                </Frame>
+
+                            </DataTemplate>
+
+                        </BindableLayout.ItemTemplate>
+
+                    </StackLayout>
+
+                </components:CustomScrollView>
+
+            </StackLayout>
+
+            <Button RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-80}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=20}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=80}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-40}"
+                    Style="{x:DynamicResource bstyle_i1}"
+                    Command="{mvx:MvxBind NextCommand}"
+                    mvx:Bi.nd="Text [Next]; IsEnabled IsValidForm, Mode=TwoWay"/>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

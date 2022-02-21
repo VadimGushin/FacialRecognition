@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CLIENT_ID</key>
+  <string>180415488380-kkgl1spshg6c8v55dga6u2vrklq5m05d.apps.googleusercontent.com</string>
+  <key>REVERSED_CLIENT_ID</key>
+  <string>com.googleusercontent.apps.180415488380-kkgl1spshg6c8v55dga6u2vrklq5m05d</string>
+  <key>API_KEY</key>
+  <string>AIzaSyA9U1FHdoNSgKt3KL8cw8sI46STmaR0ZtE</string>
+  <key>GCM_SENDER_ID</key>
+  <string>180415488380</string>
+  <key>PLIST_VERSION</key>
+  <string>1</string>
+  <key>BUNDLE_ID</key>
+  <string>com.vctrials.virtualstudy.mobile</string>
+  <key>PROJECT_ID</key>
+  <string>vctvirtual-d7012</string>
+  <key>STORAGE_BUCKET</key>
+  <string>vctvirtual-d7012.appspot.com</string>
+  <key>IS_ADS_ENABLED</key>
+  <false></false>
+  <key>IS_ANALYTICS_ENABLED</key>
+  <false></false>
+  <key>IS_APPINVITE_ENABLED</key>
+  <true></true>
+  <key>IS_GCM_ENABLED</key>
+  <true></true>
+  <key>IS_SIGNIN_ENABLED</key>
+  <true></true>
+  <key>GOOGLE_APP_ID</key>
+  <string>1:180415488380:ios:78c79f18483cefe70604f9</string>
+  <key>DATABASE_URL</key>
+  <string>https://vctvirtual-d7012.firebaseio.com</string>
+  <key>DEEP_LINK_URL_SCHEME</key>
+  <string>com.vctrials.virtualstudy.mobile</string> 
+</dict>
+</plist>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          x:TypeArguments="viewModels:TakePhotoViewModel"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.TakePhotoPage"
+                          HasNativeNavBar="False"
+                          Title="TakePhoto">
+
+    <ContentPage.Content>
+
+        <RelativeLayout BackgroundColor="Transparent">
+
+            <components:CustomNavigationBar x:Name="navigationBar"
+                                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                            BackgroundViewColor="{StaticResource tcolor_b7}"
+                                            ImgSource="btn_back_white.png"
+                                            mvx:Bi.nd="Title UserPhoto.PageTitle, Mode=TwoWay"
+                                            ClickCommand="{mvx:MvxBind BackCommand}"/>
+
+            <Grid x:Name="mainGrid"                 
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+
+                <RelativeLayout Grid.Row="0" 
+                                x:Name="cameraLayout"
+                                BackgroundColor="Transparent">
+
+                    <Image  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=20}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-120}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                            BackgroundColor="Transparent"
+                            Aspect="AspectFit"
+                            mvx:Bi.nd="IsVisible IsUserFaceImageVisible, Mode=TwoWay; Source UserPhoto.FaceImageSource, Mode=TwoWay"/>
+
+                    <ImageButton  x:Name="btnCreate"
+                                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-80}"
+                                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=60}"
+                                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=60}"
+                                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant=-30}"
+                                  Source="img_create_photo.png"
+                                  BackgroundColor="Transparent"
+                                  Command="{mvx:MvxBind CreatePhotoCommand}"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout Grid.Row="1"
+                                x:Name="bottomLayout"
+                                IsVisible="False"
+                                BackgroundColor="{StaticResource tcolor_b7}">
+
+                    <ImageButton RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=15}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=40}"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=40}"
+                                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=15}"
+                                 Source="img_library.png"
+                                 Command="{mvx:MvxBind GetImageFromLibraryCommand}"/>
+
+                    <ImageButton  x:Name="btnCameraMode"
+                                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=15}"
+                                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=40}"
+                                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=40}"
+                                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-55}"
+                                  Source="img_front_camera.png"
+                                  BackgroundColor="Transparent"
+                                  Command="{mvx:MvxBind ChangeCameraCommand}"/>
+
+                </RelativeLayout>
+
+            </Grid>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

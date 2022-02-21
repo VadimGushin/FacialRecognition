@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "EdEGwy/H3cW3TFT+AApm6LWx0UAFZOvSjOIRhlqykIevfEwbm++1G12xZlm58sZ73BDeQH/lZNF7zvirTz7R/Q==",
+  "success": true,
+  "projectFilePath": "/Users/user/Downloads/Xamarin Forms apps/FacialRecognition/Langate.FacialRecognition.Mobile/Langate.FacialRecognition.Mobile.csproj",
+  "expectedPackageFiles": [
+    "/Users/user/.nuget/packages/acr.userdialogs/7.1.0.446/acr.userdialogs.7.1.0.446.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.appcenter/3.4.0/microsoft.appcenter.3.4.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.appcenter.analytics/3.4.0/microsoft.appcenter.analytics.3.4.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.appcenter.crashes/3.4.0/microsoft.appcenter.crashes.3.4.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross/6.4.2/mvvmcross.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross.forms/6.4.2/mvvmcross.forms.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross.plugin.file/6.4.2/mvvmcross.plugin.file.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross.plugin.json/6.4.2/mvvmcross.plugin.json.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross.plugin.jsonlocalization/6.4.2/mvvmcross.plugin.jsonlocalization.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross.plugin.messenger/6.4.2/mvvmcross.plugin.messenger.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross.plugin.picturechooser/6.4.2/mvvmcross.plugin.picturechooser.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross.plugin.resourceloader/6.4.2/mvvmcross.plugin.resourceloader.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/mvvmcross.plugin.visibility/6.4.2/mvvmcross.plugin.visibility.6.4.2.nupkg.sha512",
+    "/Users/user/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/user/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/user/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/xamarin.essentials/1.3.1/xamarin.essentials.1.3.1.nupkg.sha512",
+    "/Users/user/.nuget/packages/xamarin.forms/4.8.0.1451/xamarin.forms.4.8.0.1451.nupkg.sha512",
+    "/Users/user/.nuget/packages/xamarin.forms.inputkit/3.4.3/xamarin.forms.inputkit.3.4.3.nupkg.sha512"
+  ],
+  "logs": []
+}

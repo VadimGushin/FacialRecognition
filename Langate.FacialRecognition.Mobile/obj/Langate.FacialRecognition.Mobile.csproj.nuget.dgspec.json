@@ -1,0 +1,123 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/user/Downloads/Xamarin Forms apps/FacialRecognition/Langate.FacialRecognition.Mobile/Langate.FacialRecognition.Mobile.csproj": {}
+  },
+  "projects": {
+    "/Users/user/Downloads/Xamarin Forms apps/FacialRecognition/Langate.FacialRecognition.Mobile/Langate.FacialRecognition.Mobile.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/user/Downloads/Xamarin Forms apps/FacialRecognition/Langate.FacialRecognition.Mobile/Langate.FacialRecognition.Mobile.csproj",
+        "projectName": "Langate.FacialRecognition.Mobile",
+        "projectPath": "/Users/user/Downloads/Xamarin Forms apps/FacialRecognition/Langate.FacialRecognition.Mobile/Langate.FacialRecognition.Mobile.csproj",
+        "packagesPath": "/Users/user/.nuget/packages/",
+        "outputPath": "/Users/user/Downloads/Xamarin Forms apps/FacialRecognition/Langate.FacialRecognition.Mobile/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/user/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.1.0.446, )"
+            },
+            "Microsoft.AppCenter": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "Microsoft.AppCenter.Analytics": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "Microsoft.AppCenter.Crashes": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "MvvmCross": {
+              "target": "Package",
+              "version": "[6.4.2, )"
+            },
+            "MvvmCross.Forms": {
+              "target": "Package",
+              "version": "[6.4.2, )"
+            },
+            "MvvmCross.Plugin.JsonLocalization": {
+              "target": "Package",
+              "version": "[6.4.2, )"
+            },
+            "MvvmCross.Plugin.Messenger": {
+              "target": "Package",
+              "version": "[6.4.2, )"
+            },
+            "MvvmCross.Plugin.PictureChooser": {
+              "target": "Package",
+              "version": "[6.4.2, )"
+            },
+            "MvvmCross.Plugin.ResourceLoader": {
+              "target": "Package",
+              "version": "[6.4.2, )"
+            },
+            "MvvmCross.Plugin.Visibility": {
+              "target": "Package",
+              "version": "[6.4.2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.8.0.1451, )"
+            },
+            "Xamarin.Forms.InputKit": {
+              "target": "Package",
+              "version": "[3.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-preview.3.21202.5/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

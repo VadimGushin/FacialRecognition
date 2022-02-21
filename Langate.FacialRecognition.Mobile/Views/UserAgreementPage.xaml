@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseView:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:baseView="clr-namespace:Langate.FacialRecognition.Mobile.Views.Base"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+                          xmlns:viewModels="clr-namespace:Langate.FacialRecognition.Mobile.ViewModels;assembly=Langate.FacialRecognition.Mobile"
+                          xmlns:components="clr-namespace:Langate.FacialRecognition.Mobile.Components"
+                          xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+                          x:TypeArguments="viewModels:UserAgreementViewModel"
+                          x:Class="Langate.FacialRecognition.Mobile.Views.UserAgreementPage"
+                          HasNativeNavBar="False"
+                          Title="UserAgreement">
+
+    <ContentPage.Content>
+
+        <RelativeLayout BackgroundColor="{StaticResource tcolor_b11}">
+
+            <components:CustomNavigationBar RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=80}"
+                                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                            BackgroundViewColor="{StaticResource tcolor_b11}"
+                                            ImgSource="btn_back_black.png"
+                                            ClickCommand="{mvx:MvxBind BackCommand}"/>
+
+            <Grid Padding="20,0,20,0"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=80}"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-80}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <components:CustomScrollView Grid.Row="0" 
+                                             IsOverViewVisible="False">
+
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Style="{StaticResource agreementStyle_i1}"
+                               mvx:Bi.nd="Text [EndUserAgreement]"/>
+
+
+                        <Label Grid.Row="2"
+                               Style="{StaticResource agreementStyle_i2}"
+                               VerticalTextAlignment="Start"
+                               mvx:Bi.nd="Text AcceptedText, Mode=TwoWay"/>
+
+                        <StackLayout Grid.Row="3" 
+                                     Orientation="Horizontal">
+
+                            <input:CheckBox Color="{x:DynamicResource tcolor_b2}"
+                                            VerticalOptions="Center"
+                                            Type="Material"
+                                            mvx:Bi.nd="IsChecked IsAccepted, Mode=TwoWay"/>
+
+                            <Label mvx:Bi.nd="Text [Accept]"
+                                   Style="{StaticResource agreementStyle_i2}"/>
+
+                        </StackLayout>
+
+                    </Grid>
+
+                </components:CustomScrollView>
+
+                <Button Grid.Row="2"
+                        Style="{x:DynamicResource bstyle_i1}"
+                        Command="{mvx:MvxBind NextCommand}"
+                        mvx:Bi.nd="Text [Next]; IsEnabled IsValidForm, Mode=TwoWay"/>
+
+            </Grid>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+
+</baseView:BaseContentPage>

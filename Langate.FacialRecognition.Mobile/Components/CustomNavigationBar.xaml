@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Langate.FacialRecognition.Mobile.Components.CustomNavigationBar">
+    
+  <ContentView.Content>
+
+        <RelativeLayout x:Name="parentLayout">
+
+            <ImageButton x:Name="backButton"
+                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0, Constant=13}"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=40}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=30}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=15}"
+                         Aspect="AspectFit"/>
+
+            <Label x:Name="titleText"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0, Constant=53}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=35}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-106}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-35}"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   LineHeight="1.3"
+                   TextColor="{StaticResource tcolor_b11}"
+                   FontSize="{StaticResource fsize_i15}"
+                   FontFamily="{StaticResource SPProT_M}"/>
+
+            <Image x:Name="logoImage"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0, Constant=53}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=35}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-106}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-35}"
+                   Aspect="AspectFit"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   IsVisible="true"
+                   Source="img_navigationLogo.png"/>
+
+        </RelativeLayout>
+      
+  </ContentView.Content>
+    
+</ContentView>
